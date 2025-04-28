@@ -2,5 +2,5 @@ matplotlib
 numpy
 pandas
 streamlit
-streamlit_navigation_bar
+streamlit-community-navigation-bar
 authlib

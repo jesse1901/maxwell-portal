@@ -17,7 +17,7 @@ options = {
     "show_sidebar": False,
 }
 
-#login.authenticate()
+login.authenticate()
 
 
 #parent_dir = os.path.dirname(os.path.abspath(__file__))
