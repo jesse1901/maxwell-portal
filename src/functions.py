@@ -5,17 +5,16 @@ import matplotlib.pyplot as plt
 
 class login:
 
-    def __init__(self):
+    def __init__():
         pass
 
-    def authenticate(self):
+    def authenticate():
         if not st.experimental_user.is_logged_in:
             if st.button("Log in with Keycloak"):
                 st.login()
             st.stop()
-
-    def logout():
-        st.logout()
+        else:
+            st.logout()
 
 
 class charts:

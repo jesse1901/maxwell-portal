@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pandas as pd 
 import streamlit.components.v1 as components
 import pages as pg
@@ -11,12 +12,30 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",)
 
-pages = ["Home","Reporting", "Reservations", "Webavail", "Webjobs"]
+st.markdown(
+    """
+<style>
+    [data-testid="collapsedControl"] {
+        display: none
+    }
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
 
 options = {
-    "show_menu": False,
+    "show_menu": True,
     "show_sidebar": False,
 }
+
+login.authenticate()
+
+
+#parent_dir = os.path.dirname(os.path.abspath(__file__))
+#logo = os.path.join(parent_dir, "Desy_logo.svg")
+
+pages = ["Home", "Reporting", "Reservations", "Webavail", "Webjobs"]
 
 page = st_navbar(pages, options=options)
 
@@ -29,5 +48,6 @@ functions = {
 }
 
 go_to = functions.get(page)
+
 if go_to:
     go_to()
