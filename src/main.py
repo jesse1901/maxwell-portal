@@ -12,24 +12,12 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",)
 
-st.markdown(
-    """
-<style>
-    [data-testid="collapsedControl"] {
-        display: none
-    }
-</style>
-""",
-    unsafe_allow_html=True,
-)
-
-
 options = {
     "show_menu": True,
     "show_sidebar": False,
 }
 
-login.authenticate()
+#login.authenticate()
 
 
 #parent_dir = os.path.dirname(os.path.abspath(__file__))
