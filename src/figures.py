@@ -11,7 +11,8 @@ class figures():
         pass
     
     def efficiency_chart(self):
-        user = st.experimental_user.preferred_username
+        #user = st.experimental_user.preferred_username
+        user = "abekov"
         query = f"SELECT CPUEff * 100, End FROM allocations WHERE User = '{user}'"
         df = pd.read_sql(query, self.conn)
         
@@ -27,8 +28,9 @@ class figures():
         st.line_chart(df)
     
     def user_stats(self):
-        user = st.experimental_user.preferred_username
-        query = f"SELECT * FROM allocations WHERE User = '{user}'"
+        #user = st.experimental_user.preferred_username
+        user = "abekov"
+        query = f"SELECT * FROM allocations WHERE User = '{user}' LIMIT 500"
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
