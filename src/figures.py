@@ -14,6 +14,9 @@ class figures():
         user = st.experimental_user.preferred_username
         query = f"SELECT CPUEff, End FROM allocations WHERE User = '{user}'"
         df = pd.read_sql(query, self.conn)
+        
+        
+        berlin_tz = pytz.timezone('Europe/Berlin')
         df['End'] = pd.to_datetime(df['End'], unit='s', errors='coerce').dt.tz_localize('UTC')
         df['End'] = df['End'].dt.tz_convert(berlin_tz)
         df['End'] = df['End'].dt.strftime('%Y-%m-%d %H:%M:%S')
