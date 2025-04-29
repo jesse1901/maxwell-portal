@@ -12,7 +12,7 @@ class figures():
     
     def efficiency_chart(self):
         user = st.experimental_user.preferred_username
-        query = f"SELECT CPUEff, End FROM allocations WHERE User = {user}"
+        query = f"SELECT CPUEff, End FROM allocations WHERE User = '{user}'"
         df = pd.read_sql(query, self.conn)
         df['End'] = pd.to_datetime(df['End'], unit='s', errors='coerce').dt.tz_localize('UTC')
         df['End'] = df['End'].dt.tz_convert(berlin_tz)
