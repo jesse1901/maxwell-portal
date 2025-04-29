@@ -6,7 +6,6 @@ import pages as pg
 from functions import charts, login
 from streamlit_navigation_bar import st_navbar
 
-
 st.set_page_config(
     page_title="Portal",
     layout="wide",
