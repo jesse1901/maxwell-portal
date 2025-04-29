@@ -7,6 +7,7 @@ def show_home():
     #st.title("Home")
     f = figures()
     f.efficiency_chart()
+    f.user_stats()
 
  #   charts.test_chart()
  #   data = charts.generate_user_stats()
