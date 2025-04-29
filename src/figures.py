@@ -41,3 +41,4 @@ class figures():
         col1.metric("Ø CPU-Effizienz", f"{df['CPUEff'].mean():.1f}%")
         col2.metric("Jobs insgesamt", df['JobID'].count())
         col3.metric("Verlorene CPU-Zeit (h)", df['LostCPUTime'].sum())
+        
