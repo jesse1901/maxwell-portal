@@ -12,7 +12,7 @@ class figures():
     
     def efficiency_chart(self):
         user = st.experimental_user.preferred_username
-        query = f"SELECT CPUEff, End FROM allocations WHERE User = '{user}'"
+        query = f"SELECT CPUEff * 100, End FROM allocations WHERE User = '{user}'"
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
@@ -34,11 +34,8 @@ class figures():
         if df.empty:
             st.error("Keine Daten verfügbar.")
             return
-        
-        st.title("HPC-Cluster Übersicht")
-        
-        col1, col2, col3 = st.columns(3)
+                
+        col1, col2 = st.columns(2)
         col1.metric("Ø CPU-Effizienz", f"{df['CPUEff'].mean():.1f}%")
         col2.metric("Jobs insgesamt", df['JobID'].count())
-        col3.metric("Verlorene CPU-Zeit (h)", df['LostCPUTime'].sum())
         

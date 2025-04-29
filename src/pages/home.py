@@ -5,6 +5,7 @@ from figures import figures
 
 def show_home():
     #st.title("Home")
+    st.title("HPC-Cluster Übersicht")
     f = figures()
     f.efficiency_chart()
     f.user_stats()
