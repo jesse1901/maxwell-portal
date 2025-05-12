@@ -30,7 +30,7 @@ class figures():
     def user_stats(self):
         #user = st.experimental_user.preferred_username
         user = "abekov"
-        query = f"SELECT AVG(CPUEff) AS AVG_CPU_Eff, COUNT(JobID) AS JobID FROM allocations WHERE User = '{user}' LIMIT 500"
+        query = f"SELECT AVG(CPUEff) AS CPUEff, COUNT(JobID) AS JobID FROM allocations WHERE User = '{user}' LIMIT 500"
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
