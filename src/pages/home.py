@@ -30,11 +30,11 @@ def show_home():
     </style>
     """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        card("Dokumentation", "Öffne die Docs", "pages/reporting.py")
-    with col2:
-        card("Analytics", "Zu deinen Statistiken", "https://example.com/stats")
+#    col1, col2 = st.columns(2)
+#    with col1:
+#        card("Dokumentation", "Öffne die Docs", "pages/reporting.py")
+#    with col2:
+#        card("Analytics", "Zu deinen Statistiken", "https://example.com/stats")
 
     st.title("HPC-Cluster Übersicht")
     f = figures()

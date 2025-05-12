@@ -13,7 +13,7 @@ class figures():
     def efficiency_chart(self):
         #user = st.experimental_user.preferred_username
         user = "abekov"
-        query = f"SELECT CPUEff * 100, End FROM allocations WHERE User = '{user}'"
+        query = f"SELECT CPUEff * 100 AS CPUEff, End FROM allocations WHERE User = '{user}'"
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
@@ -30,7 +30,7 @@ class figures():
     def user_stats(self):
         #user = st.experimental_user.preferred_username
         user = "abekov"
-        query = f"SELECT * FROM allocations WHERE User = '{user}' LIMIT 500"
+        query = f"SELECT AVG(CPUEff) AS AVG_CPU_Eff, COUNT(JobID) AS JobID FROM allocations WHERE User = '{user}' LIMIT 500"
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
@@ -38,6 +38,6 @@ class figures():
             return
                 
         col1, col2 = st.columns(2)
-        col1.metric("Ø CPU-Effizienz", f"{df['CPUEff'].mean():.1f}%")
-        col2.metric("Jobs insgesamt", df['JobID'].count())
+        col1.metric("Ø CPU-Effizienz", df['CPUEff'])
+        col2.metric("Jobs insgesamt", df['JobID'])
         
