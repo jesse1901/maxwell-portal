@@ -41,6 +41,5 @@ def show_home():
     f.efficiency_chart()
     f.user_stats()
 
- #   charts.test_chart()
- #   data = charts.generate_user_stats()
- #   charts.show_dashboard(data)
+
+show_home()

@@ -17,7 +17,7 @@ class figures():
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
-            st.error("Keine Daten verfügbar.")
+            st.error("Keine Daten verfügbar")
             return
         
         berlin_tz = pytz.timezone('Europe/Berlin')
@@ -34,10 +34,10 @@ class figures():
         df = pd.read_sql(query, self.conn)
         
         if df.empty:
-            st.error("Keine Daten verfügbar.")
+            st.error("Keine Daten verfügbar")
             return
                 
         col1, col2 = st.columns(2)
-        col1.metric("Ø CPU-Effizienz", df['CPUEff'])
+        col1.metric("Ø CPU-Effizienz",  df['CPUEff'])
         col2.metric("Jobs insgesamt", df['JobID'])
         

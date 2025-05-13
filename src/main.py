@@ -18,23 +18,16 @@ options = {
 
 #login.authenticate()
 
+pages = [
+    st.Page("pages/home.py", title="Home", url_path="home"),
+    st.Page("pages/reporting.py", title="Reporting", url_path="reporting"),
+    st.Page("pages/reservations.py", title="Reservation", url_path="reservation"),
+    st.Page("pages/webavial.py", title="Webavial", url_path="webavail"),
+    st.Page("pages/webjobs.py", title="Webjobs", url_path="webjobs"),
+]
 
-#parent_dir = os.path.dirname(os.path.abspath(__file__))
-#logo = os.path.join(parent_dir, "Desy_logo.svg")
+# Only call this once in the whole app
+page = st_navbar(pages, options=options, set_path=True)
 
-pages = ["Home", "Reporting", "Reservations", "Webavail", "Webjobs"]
-
-page = st_navbar(pages, options=options)
-
-functions = {
-    "Home": pg.show_home,
-    "Reporting": pg.show_reporting,
-    "Reservations": pg.show_reservations,
-    "Webavail": pg.show_webavail,
-    "Webjobs": pg.show_webjobs,
-}
-
-go_to = functions.get(page)
-
-if go_to:
-    go_to()
+if page:
+    page.run()
