@@ -12,7 +12,7 @@ options = {
     "show_sidebar": False,
 }
 
-#login.authenticate()
+login.authenticate()
 
 pages = [
     st.Page("pages/home.py", title="Home", url_path="home"),
