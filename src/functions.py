@@ -13,8 +13,8 @@ class login:
             if st.button("Log in with Keycloak"):
                 st.login()
             st.stop()
-        else:
-            st.logout()
+        #else:
+        #    st.logout()
 
 
 class charts:
