@@ -1,9 +1,5 @@
 import streamlit as st
-import os
-import pandas as pd 
-import streamlit.components.v1 as components
-import pages as pg
-from functions import charts, login
+from functions import login
 from streamlit_navigation_bar import st_navbar
 
 st.set_page_config(
@@ -12,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",)
 
 options = {
-    "show_menu": True,
+    "show_menu": False,
     "show_sidebar": False,
 }
 
@@ -27,7 +23,7 @@ pages = [
 ]
 
 # Only call this once in the whole app
-page = st_navbar(pages, options=options, set_path=True)
+page = st_navbar(pages, options=options, set_path=False)
 
 if page:
     page.run()

@@ -46,8 +46,8 @@ class charts:
             "total_runtime_h": np.round(np.random.uniform(20, 200, size=4), 1),
         }
 
-        return pd.DataFrame(stats)  # WICHTIG: return nicht vergessen!
-
+        return pd.DataFrame(stats)  
+    
     def show_dashboard(df):
         if df is None or df.empty:
             st.error("Keine Daten verfügbar.")
